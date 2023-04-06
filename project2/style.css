@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+	--dark-bg1: #64052a;
+	--dark-bg2: #7d0b43;
+	--light-bg: #9a0d5b;
+	--light-text: #fff;
+	--blue: #003bc0;
+	--header-height: 5rem;
+	--radius: 0.625rem;
+	--box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	line-height: 1.5;
+	color: var(--light-text);
+	font-family: 'Montserrat', sans-serif;
+	/* margin-top: var(--header-height); */
+}
+
+header {
+	position: sticky;
+	inset: 0 0 auto 0;
+	display: grid;
+	place-content: center;
+	background-color: var(--dark-bg1);
+	min-height: var(--header-height);
+	z-index: 1;
+}
+
+section {
+	display: grid;
+	justify-content: center;
+	align-items: start;
+	min-height: calc(100dvh - var(--header-height));
+	margin-block: 3rem;
+}
+
+#list {
+	width: clamp(25rem, 50vw + 1rem, 40rem);
+}
+
+.card {
+	position: relative;
+	display: grid;
+	place-content: center;
+	border-radius: var(--radius);
+	box-shadow: var(--box-shadow);
+	background-color: var(--light-bg);
+	min-height: 5rem;
+	cursor: grab;
+}
+
+.card .material-symbols-outlined {
+	padding: 1rem;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.dropzone {
+	display: grid;
+	place-content: center;
+	border-radius: var(--radius);
+	color: var(--blue);
+	border: thin dashed var(--blue);
+	min-height: 0;
+	max-height: 1rem;
+	opacity: 0;
+	transition: all 0.2s ease-in-out;
+	user-select: none;
+}
+
+.dropzone.dragover {
+	margin-block: 0.25rem;
+	min-height: 3.5rem;
+	opacity: 1;
+}
+
+.dragged {
+	opacity: 0.2;
+}

@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+h1 {
+	text-align: center;
+	margin-block: 3rem;
+}
+
+section {
+	max-width: 40%;
+	margin-inline: auto;
+}
+
+.list-element {
+	position: relative;
+	border: thin solid black;
+	border-radius: 0.5rem;
+	text-align: center;
+	padding-block: 1.5rem;
+	margin-block: 0.5rem;
+	cursor: grab;
+	user-select: none;
+	transition-property: box-shadow background-color;
+	transition: 0.2s ease-in-out;
+}
+
+.list-element:hover {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.dragging {
+	opacity: 0.2;
+}
+
+.dragged {
+	background-color: #333;
+	opacity: 0.2;
+}
+
+.top::before {
+	/* border-top: 5px solid blue; */
+	content: 'drop';
+	position: absolute;
+	display: block;
+	top: -0.5rem;
+	height: 0.5rem;
+	width: 100%;
+	border-radius: 0.25rem;
+	background-color: blue;
+}
+
+.bottom::after {
+	/* border-bottom: 5px solid blue; */
+	content: 'drop';
+	position: absolute;
+	display: block;
+	bottom: -0.5rem;
+	height: 0.5rem;
+	width: 100%;
+	border-radius: 0.25rem;
+	background-color: blue;
+}
